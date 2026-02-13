@@ -613,11 +613,11 @@
         </div>
       </div>
 
-      <form class="contact-form" onsubmit="handleForm(event)">
-        <input type="text"  placeholder="Your Name"    required />
-        <input type="email" placeholder="Your Email"   required />
-        <input type="text"  placeholder="Subject"      required />
-        <textarea           placeholder="Your message…" required></textarea>
+      <form class="contact-form" action="https://formspree.io/f/mreapyvk" method="POST">
+        <input type="text"  name="name" placeholder="Your Name"    required />
+        <input type="email" name="email" placeholder="Your Email"   required />
+        <input type="text"  name="subject" placeholder="Subject"      required />
+        <textarea           name="message" placeholder="Your message…" required></textarea>
         <button type="submit" class="btn-primary" style="cursor:none">Send Message →</button>
         <div id="form-msg" style="display:none;font-size:.82rem;color:var(--accent);margin-top:4px;"></div>
       </form>
