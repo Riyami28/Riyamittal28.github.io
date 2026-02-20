@@ -33,20 +33,14 @@
       width:100px;height:100px;border-radius:50%;overflow:hidden;
       border:3px solid var(--accent);margin-bottom:16px;
     }
-    .photo img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;transform:scale(1.35)}
+    .photo img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block}
 
     .name{font-size:1.8rem;font-weight:800;line-height:1.15;margin-bottom:2px}
-    .name span{color:var(--accent)}
+    .name span{background:linear-gradient(135deg,#ec4899,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
     .tagline{font-size:.88rem;color:var(--accent);font-weight:600;margin-bottom:14px}
 
     .bio{font-size:.84rem;color:var(--muted);line-height:1.7;margin-bottom:20px}
     .bio strong{color:var(--text);font-weight:600}
-
-    .skills-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
-    .sk{
-      font-size:.68rem;font-weight:600;padding:4px 10px;border-radius:6px;
-      background:var(--accent-soft);color:var(--accent);
-    }
 
     .links{display:flex;gap:8px;flex-wrap:wrap}
     .links a{
@@ -63,6 +57,7 @@
     .proj{
       background:var(--card);border:1px solid var(--border);border-radius:14px;
       padding:20px 22px;transition:all .25s;position:relative;
+      display:flex;flex-direction:column;min-height:140px;
     }
     .proj:hover{box-shadow:0 8px 24px rgba(0,0,0,.06);transform:translateY(-2px)}
     .proj-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
@@ -73,7 +68,7 @@
       text-decoration:none;border:1px solid var(--border);color:var(--light);transition:all .2s;
     }
     .proj-links a:hover{border-color:var(--accent);color:var(--accent)}
-    .proj-desc{font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:10px}
+    .proj-desc{font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:10px;flex:1}
     .proj-tags{display:flex;flex-wrap:wrap;gap:4px}
     .t{font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:4px;border:1px solid}
     .t-bl{color:#6366f1;border-color:rgba(99,102,241,.2);background:rgba(99,102,241,.04)}
@@ -84,12 +79,26 @@
 
     /* ===== SECTION 2: Bottom ===== */
     .bottom{
-      display:grid;grid-template-columns:1fr 1fr;
-      gap:48px;padding:48px 0;border-top:1px solid var(--border);
+      display:grid;grid-template-columns:1fr 1.2fr 1fr;
+      gap:36px;padding:48px 0;border-top:1px solid var(--border);
       align-items:start;
     }
 
     .sec-title{font-size:1.1rem;font-weight:800;margin-bottom:16px}
+
+    /* Tech Stack */
+    .stack-grid{display:flex;flex-direction:column;gap:10px}
+    .stack-cat{
+      background:var(--card);border:1px solid var(--border);border-radius:10px;
+      padding:12px 14px;transition:all .2s;
+    }
+    .stack-cat:hover{border-color:var(--accent);transform:translateY(-1px)}
+    .stack-cat-name{font-size:.72rem;font-weight:700;margin-bottom:6px;color:var(--text)}
+    .stack-cat-tags{display:flex;flex-wrap:wrap;gap:4px}
+    .stag{
+      font-size:.64rem;font-weight:600;padding:3px 8px;border-radius:5px;
+      background:var(--accent-soft);color:var(--accent);
+    }
 
     /* Experience */
     .exp-list{display:flex;flex-direction:column;gap:10px}
@@ -146,7 +155,7 @@
     @media(max-width:800px){
       .page{padding:0 20px}
       .main{grid-template-columns:1fr;min-height:auto;padding:80px 0 30px;gap:30px}
-      .bottom{grid-template-columns:1fr;gap:30px}
+      .bottom{grid-template-columns:1fr;gap:24px}
       footer{flex-direction:column;gap:4px;text-align:center}
     }
   </style>
@@ -164,15 +173,9 @@
         CS student at Chitkara University. I build <strong>full-stack apps</strong> and work on <strong>cloud infrastructure</strong>.
         AI-native developer — I think with AI, build with it, and ship faster with it.
       </p>
-      <div class="skills-row">
-        <span class="sk">React</span><span class="sk">Next.js</span><span class="sk">TypeScript</span>
-        <span class="sk">Node.js</span><span class="sk">MongoDB</span><span class="sk">Tailwind</span>
-        <span class="sk">Python</span><span class="sk">Cloud Infra</span><span class="sk">OpenAI</span>
-      </div>
       <div class="links">
         <a href="https://github.com/Riyami28" target="_blank" class="link-fill">GitHub</a>
         <a href="https://www.linkedin.com/in/riya-mittal-371b44288/" target="_blank" class="link-fill" style="background:var(--cyan)">LinkedIn</a>
-        <a href="mailto:riyamittal2807@gmail.com" class="link-ghost">Email Me</a>
       </div>
     </div>
 
@@ -238,13 +241,59 @@
             <div class="exp-desc">Cloud infrastructure, cost optimization tools, full-stack apps. Built CloudScout & CloudPulse.</div>
           </div>
         </div>
-        <div class="exp">
+      </div>
+
+      <h2 class="sec-title" style="margin-top:20px">Education</h2>
+      <div class="exp-list">
+        <div class="exp" style="border-left-color:var(--cyan)">
           <div class="exp-icon">&#127891;</div>
           <div>
             <div class="exp-role">B.Tech Computer Science</div>
             <div class="exp-place">Chitkara University</div>
             <div class="exp-time">2022 — Present</div>
-            <div class="exp-desc">Software dev, DSA, modern web technologies. Building projects in AI & cloud.</div>
+            <div class="exp-desc">Software dev, DSA, modern web. Building projects in AI & cloud.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="sec-title">Tech Stack</h2>
+      <div class="stack-grid">
+        <div class="stack-cat">
+          <div class="stack-cat-name">Languages</div>
+          <div class="stack-cat-tags">
+            <span class="stag">Java</span><span class="stag">Python</span><span class="stag">JavaScript</span><span class="stag">TypeScript</span><span class="stag">SQL</span>
+          </div>
+        </div>
+        <div class="stack-cat">
+          <div class="stack-cat-name">Frontend</div>
+          <div class="stack-cat-tags">
+            <span class="stag">React.js</span><span class="stag">Next.js</span><span class="stag">Tailwind CSS</span><span class="stag">HTML/CSS</span>
+          </div>
+        </div>
+        <div class="stack-cat">
+          <div class="stack-cat-name">Backend</div>
+          <div class="stack-cat-tags">
+            <span class="stag">Node.js</span><span class="stag">Express.js</span><span class="stag">REST APIs</span><span class="stag">JWT Auth</span>
+          </div>
+        </div>
+        <div class="stack-cat">
+          <div class="stack-cat-name">Database & Cloud</div>
+          <div class="stack-cat-tags">
+            <span class="stag">MongoDB</span><span class="stag">Cloud Infra</span><span class="stag">Vercel</span>
+          </div>
+        </div>
+        <div class="stack-cat">
+          <div class="stack-cat-name">CS Fundamentals</div>
+          <div class="stack-cat-tags">
+            <span class="stag">DSA</span><span class="stag">OOP</span><span class="stag">OS</span><span class="stag">DBMS</span>
+          </div>
+        </div>
+        <div class="stack-cat">
+          <div class="stack-cat-name">AI & Tools</div>
+          <div class="stack-cat-tags">
+            <span class="stag">OpenAI APIs</span><span class="stag">LLM Integration</span><span class="stag">Git</span><span class="stag">GitHub</span>
           </div>
         </div>
       </div>
