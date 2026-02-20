@@ -93,18 +93,20 @@
     .hero-content { max-width: 720px; }
 
     .hero-photo {
-      width: 160px; height: 160px; border-radius: 50%;
+      width: 180px; height: 180px; border-radius: 50%;
       margin: 0 auto 28px;
       padding: 4px;
       background: var(--grad-hero); background-size: 200% 200%;
       animation: fadeUp .5s ease both, gradientShift 6s ease infinite;
       box-shadow: 0 8px 30px rgba(99,102,241,.18), 0 2px 8px rgba(244,63,94,.10);
+      overflow: hidden;
     }
     .hero-photo img {
       width: 100%; height: 100%; border-radius: 50%;
-      object-fit: cover; object-position: center 20%;
+      object-fit: contain;
       display: block;
       border: 3px solid var(--bg);
+      background: var(--bg);
     }
 
     .hero-badge {
